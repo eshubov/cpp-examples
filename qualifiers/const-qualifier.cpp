@@ -1,18 +1,14 @@
-#include <stdio.h>
+// Run 'size -A -d <exe> and see sizes of .data and .rodata sections with and without const
 
-#define a "1234567890" "1234567890" "1234567890" "1234567890" "1234567890" "1234567890" "1234567890" "1234567890" "1234567890" "1234567890"
-#define b a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a
-#define c b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b
-#define d c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c 
-#define e d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d 
-#define f e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e e 
-#define g f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f
+// What will be the output of this program?
 
-char x[] = d;
+#include <iostream>
+
+const char x[] = "?ello, world\n";
 
 int main()
 {
-    printf("sizeof(x)=%ld\n", sizeof(x));
-    int ccc = getchar();
+    *(const_cast<char*>(x)) = 'H';
+    std::cout << x;
     return 0;
 }
