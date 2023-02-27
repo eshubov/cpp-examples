@@ -1,6 +1,5 @@
 // In a member function declaration or definition, override specifier ensures that the function is virtual 
 // and is overriding a virtual function from a base class. 
-// The program is ill-formed (a compile-time error is generated) if this is not true.
 
 // Which lines produce compilation errors?
 
