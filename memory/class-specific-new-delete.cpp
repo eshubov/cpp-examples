@@ -1,7 +1,8 @@
 // Why would you overload operator new for a class? There are some reasons:
 //
 // - Performance: the default memory allocator is designed to be general purpose. 
-//   Sometimes you have very specific objects you want to allocate, and by customizing the way they're allocated you can speed up memory management considerably. A lot of books and articles discuss this issue. 
+//   Sometimes you have very specific objects you want to allocate, 
+//   and by customizing the way they're allocated you can speed up memory management considerably.
 //
 // - Debugging & statistics: having full control of the way memory is allocated and released 
 //   provides great flexibility for debugging, statistics and performance analysis. 
