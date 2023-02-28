@@ -18,7 +18,8 @@ class A
 public:    
     A(int i) : a(i) { std::cout << "A::(" << i << ")" << std::endl; }
     A() = default;
-    A& operator=(A&& other) = delete;
+    A& operator=(const A& other) { a = other.a; return *this; }
+    A& operator=(A&& other) = delete; //{ a = other.a; return *this; }
 private:    
     int a;
 };
@@ -29,4 +30,6 @@ int main()
     A a0, a1;
     std::cout << "This is main" << std::endl;   
     a0 = 1;
+    a1 = a0;
+    return 0;
 }

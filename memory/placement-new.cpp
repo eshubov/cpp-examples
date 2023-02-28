@@ -26,11 +26,11 @@ int main()
 
     // Create a buffer large enough to hold an integer, and
     // note its address.
-    unsigned char mem[sizeof(A)];
+    char mem[sizeof(A)];
 
     // Construct the new integer inside the buffer 'mem'.
     // The address is going to be mem's.
-    A* a1 = new ((void*)mem) A(10);
+    A* a1 = new (mem) A(10);
 
     delete a0;
     delete a1;
