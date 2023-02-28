@@ -1,3 +1,7 @@
+// Overloading new and delete operators might be used for debugging
+
+// What is the expected output of this code?
+
 #include <iostream>
 
 void* operator new(size_t sz) throw ()
