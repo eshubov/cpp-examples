@@ -10,7 +10,7 @@ void f(int* i)
 void g(int& i)
 {
     // No need to check reference validity
-    // C++ doesn't allow unitialized refernces
+    // C++ doesn't allow unitialized references
     i = 2;
 }
 
