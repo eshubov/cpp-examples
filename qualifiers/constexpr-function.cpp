@@ -1,11 +1,16 @@
 #include <iostream>
 
 // Which of factorial calls will be evaluated at compile time, and which at run time?
+// How to prove that?
 
 // C++11 constexpr functions use recursion rather than iteration
 constexpr int factorial(int n)
 {
-    return n <= 1 ? 1 : (n * factorial(n - 1));
+    // "g++ -std=c++11 constexpr-function.cpp" will fail as only return statement is supported in C++11
+    if (n <= 1) return 1; else return (n * factorial(n - 1)); 
+
+    // This will work also with C++11
+    //return n <= 1 ? 1 : (n * factorial(n - 1));
 }
  
 // output function that requires a compile-time constant, for testing
