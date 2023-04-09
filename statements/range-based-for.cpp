@@ -55,7 +55,7 @@ int main()
 
 class MyVector1 {
 public:
-    MyVector(vector<double>& v) : v(v) {}
+    MyVector1(vector<double>& v) : v(v) {}
     vector<double>::iterator begin() { return v.begin(); }
     vector<double>::iterator end() { return v.end(); }
     vector<double>& v;
