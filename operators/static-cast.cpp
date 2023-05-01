@@ -1,3 +1,5 @@
+// static_cast is safe as it checks for possible conversions at compile time.
+//
 // What will be the output of the following code?
 
 #include <iostream>
@@ -32,3 +34,14 @@ int main()
   
     return 0;
 }
+
+
+
+
+
+
+// EXPLANATION:
+// ------------
+// static_cast forces calling appropriate constructor or type conversion function.
+//
+// Line 'obj = 20;' will cause integer::integer(int) call as a default operator=(ingeger&) is generated automatically. 
