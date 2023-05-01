@@ -15,3 +15,24 @@ int main()
 
   return 0;
 }
+
+
+
+
+
+
+
+
+
+// EXPLANATION:
+// ------------
+//
+// static_cast fails if base class is privately inherited.
+// Use public inheritence to make static_cast work:
+//     class Derived: public Base {};
+
+
+
+
+
+
