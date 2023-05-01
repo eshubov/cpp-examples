@@ -1,4 +1,6 @@
-// Avoid assignmnent in constructors. Use initializer list instead
+// Avoid assignmnent in constructors. Use initializer list instead. 
+// Prevent execution of default constructor.
+
 // What will be the output?
 
 #include <iostream> 
@@ -20,8 +22,18 @@ struct A
     Int a; 
 }; 
 
+struct B
+{ 
+    B(const Int& i) : a (i) {} 
+    Int a; 
+}; 
+
+
 int main() 
 { 
+    std::cout << "Constructing A" << std::endl;
     A a(1); 
+    std::cout << "Constructing B" << std::endl;
+    B b(1); 
     return 0; 
 }
