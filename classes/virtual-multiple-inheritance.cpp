@@ -22,4 +22,30 @@ int main()
     Person& a = ta;
     Person& student = static_cast<Student&>(ta); 
     Person& worker = static_cast<Worker&>(ta);
-}    
+}
+
+
+
+
+
+
+
+
+// EXPLANATION:
+// ------------
+//
+// A call to aTeachingAssistant.speak() is ambiguous because there are two Person (indirect) base classes in TeachingAssistant, 
+// so any TeachingAssistant object has two different Person base class subobjects.
+//
+// To disambiguate, we would need to explicitly convert ta to any of the two base class subobjects:
+//    TeachingAssistant ta;
+//    Person& student = static_cast<Student&>(ta); 
+//    Person& worker = static_cast<Worker&>(ta);
+// Or use virtual multiple inheritance:
+//    struct Student: virtual Person {
+//       virtual void learn() {}
+//    };
+//
+//    struct Worker: virtual Person {
+//        virtual void work() {}
+//    };
