@@ -1,4 +1,5 @@
-// What will be the output?
+// Both base class A and derived class B have f() method.
+// Which one will be called? What will be the output?
 
 #include <iostream>
 
@@ -14,7 +15,6 @@ struct B : virtual A
 
 struct C : virtual A { }; 
 
-// name-lookup sees B::f and A::f, but B::f dominates over A::f ! 
 struct D : B, C 
 { 
     void g() { f(); } 
@@ -26,3 +26,14 @@ int main()
     d.g();
     return 0;
 }
+
+
+
+
+
+
+
+// EXPLANATION:
+// ------------
+//
+// Name-lookup sees B::f and A::f, but B::f dominates over A::f ! 

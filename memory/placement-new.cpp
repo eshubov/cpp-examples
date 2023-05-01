@@ -37,3 +37,14 @@ int main()
 
     return 0;
 }
+
+
+
+
+
+// EXPLANATION:
+// ------------
+// 
+// "delete" should not be called for objects allocated with placement new.
+// Instead explicitly calling destructor should be used:
+//   a1->~A();
