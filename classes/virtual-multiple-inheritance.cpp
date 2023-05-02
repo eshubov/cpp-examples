@@ -31,6 +31,23 @@ int main()
 
 
 
+
+// ANSWER:
+// -------
+// Use virtual multiple inheritance:
+//
+//    struct Student: Person {
+//        virtual void learn() {}
+//    };
+//
+//    struct Worker: Person {
+//        virtual void work() {}
+//    };
+
+
+
+
+
 // EXPLANATION:
 // ------------
 //
