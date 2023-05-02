@@ -1,7 +1,10 @@
 // Explict specifies that a constructor or conversion function is explicit, 
 // that is, it cannot be used for implicit conversions and copy-initialization.
 // error: copy-initialization does not consider B::B(int)
-// What rows will cause compilation errors?
+//
+// QUESTION:
+// ---------
+// What lines will cause compilation errors?
 
 struct A 
 { 
@@ -14,7 +17,6 @@ struct B
     explicit B(int) {} 
     explicit operator bool() const { return true; } 
 };
-
 
 int main() 
 { 
